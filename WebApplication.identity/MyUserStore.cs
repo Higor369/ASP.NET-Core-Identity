@@ -23,7 +23,7 @@ namespace WebApplication.identity
                     {
                         id = user.Id,
                         userName = user.UserName,
-                        normalizedUserName = user.NormalizedUsername,
+                        normalizedUserName = user.NormalizedUserName,
                         passwordHash = user.PasswordHash
                     });
             }
@@ -82,7 +82,7 @@ namespace WebApplication.identity
 
         public Task<string> GetNormalizedUserNameAsync(MyUser user, CancellationToken cancellationToken)
         {
-            return Task.FromResult(user.NormalizedUsername); 
+            return Task.FromResult(user.NormalizedUserName); 
         }
 
         public Task<string> GetUserIdAsync(MyUser user, CancellationToken cancellationToken)
@@ -97,7 +97,7 @@ namespace WebApplication.identity
 
         public Task SetNormalizedUserNameAsync(MyUser user, string normalizedName, CancellationToken cancellationToken)
         {
-            user.NormalizedUsername = normalizedName;
+            user.NormalizedUserName = normalizedName;
             return Task.CompletedTask;
         }
 
@@ -121,7 +121,7 @@ namespace WebApplication.identity
                     new { 
                         id = user.Id,
                         userName = user.UserName,
-                        normalizedUserName = user.NormalizedUsername,
+                        normalizedUserName = user.NormalizedUserName,
                         passwordHash = user.PasswordHash
                     });
             }
